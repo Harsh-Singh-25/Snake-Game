@@ -12,7 +12,7 @@ body {
 :root{
     /* background-color */
     --bg-primary-color: #0c0c0c;
-    --bg-fill-color: #bf0000;
+    --bg-fill-color: #ffffff;
 
     /* Text color */
     --text-primary-color: #f0f0f0;
