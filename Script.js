@@ -72,11 +72,17 @@ function render() {
     if (block) block.classList.remove("fill");
   });
 
-  snake.unshift(head);
-  snake.pop();
+  const ateFood = head.x === food.x && head.y === food.y;
 
-  if (head.x === food.x && head.y === food.y) {
+  // move head
+  snake.unshift(head);
+  
+
+  if (ateFood) {
+    // remove old food
     blocks[`${food.y}-${food.x}`].classList.remove("food");
+
+    // spawn new food
     food = {
       x: Math.floor(Math.random() * cols),
       y: Math.floor(Math.random() * rows),
@@ -91,6 +97,9 @@ function render() {
       localStorage.setItem("highScore", highScore.toString());
       highScoreElement.innerText = highScore;
     }
+  } else {
+    // only remove tail when we didn't eat
+    snake.pop();
   }
 
   snake.forEach((segment) => {
