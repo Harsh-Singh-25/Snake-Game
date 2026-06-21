@@ -123,7 +123,7 @@ function startTimer() {
 
 startButton.addEventListener("click", () => {
   modal.style.display = "none";
-  intervalId = setInterval(() => render(), 400);
+  intervalId = setInterval(() => render(), 300);
   startTimer();
 });
 
